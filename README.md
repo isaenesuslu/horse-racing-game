@@ -1,4 +1,4 @@
-<a href="https://isaenesuslu.github.io/horse_racing_game/" target="_blank">https://isaenesuslu.github.io/horse_racing_game/</a>
+[<a href="https://isaenesuslu.github.io/horse_racing_game/" target="_blank">https://isaenesuslu.github.io/horse_racing_game/</a>](https://isaenesuslu.github.io/horse_racing_game/)
 
 (Voiced)
 

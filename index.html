@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[BETA] Horse Racing Game</title>
+    <link rel="icon" href="./img/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--* GAME WELCOME -->
+    <div class="game-welcome">
+        <div class="welcome-panel">
+                <div class="buttons">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <h1 class="text-center" style="letter-spacing: 10px; text-shadow: 2px 3px gray;">HRG [BETA]</h1>
+                    </div>
+                    <div class="clickable">
+                        <div class="d-flex">
+                            <p onmouseenter="mouseEnter()" onmouseleave="mouseLeave()" onclick="playGameFunc()">PLAY</p>
+                            <img src="img/figure/welcome-arrow.gif" class="welcome-arrow" alt="play" width="60px" height="60px">
+                        </div>
+                        <div class="d-flex">
+                            <p onmouseenter="mouseEnter2()" onmouseleave="mouseLeave2()" onclick="creatorMenu()">CREATOR</p>
+                            <img src="./img/figure/welcome-arrow.gif" class="welcome-arrow" alt="creator" width="60px" height="60px">
+                        </div>
+                        <div class="d-flex">
+                            <p onmouseenter="mouseEnter3()" onmouseleave="mouseLeave3()" onclick="contactMenu()">CONTACT ME</p>  
+                            <img src="img/figure/welcome-arrow.gif" class="welcome-arrow" alt="contact" width="60px" height="60px">
+                        </div>
+                    </div>
+                    <small class="text-center mt-5" style="cursor:context-menu;">Others</small>
+                    <hr>
+                    <div class="music-control">
+                        <audio id="audio-player" src="./sound/Crash and Burn (8 Bit Remix Cover Version) [Tribute to Thomas Rhett - 8 Bit Universe.m4a" loop></audio>
+                        <img src="./img/buttons/SoundOff.png" class="audio-btn start-stop" alt="audio">
+                        <img src="./img/buttons/Store.png" onclick="storeFunc()" alt="store">
+                        <img src="./img//buttons/Announcment.png" onclick="annFunc()" alt="announcment ">
+                        <audio class="click-effect" src="./sound/8bit Click Sound Effect.m4a"></audio>
+                    </div>
+                    <hr>
+                    <small style="font-size: 1.2rem;" class="text-center pt-3"><i class="fa-solid fa-music fa-xs pe-3"></i> Thomas Rhett - Crash and Burn <br> (8 Bit Remix Cover Version) <i class="fa-solid fa-music fa-xs ps-3"></i></small>
+                </div>
+            </div>
+            <img src="./img/figure/welcome-horse.gif" class="g-horse" alt="welcome-horse" width="200px" height="200px">
+            <div class="creator text-center">
+                <span class="exit" onclick="windowQuit1()">x</span>
+                <p class="option-header">CREATOR:</p>
+                <p class="name">ISA ENES USLU</p>
+                <img src="img/figure/cowboy.gif" alt="cowboy" width="200px" height="200px">
+            </div>
+            <div class="contact text-center">
+                <span class="exit" onclick="windowQuit2()">x</span>
+                <p class="option-header">CONTACT ME:</p>
+                <ul class="hero-social">
+                    <li><a href="https://www.instagram.com/isaenes.uslu/" target="_blank" class="social"><span><img src="./img/social/instagram.png" alt="instagram" width="40px"><span> Instagram</span></span></a></li>
+                    <li><a href="https://twitter.com/isaenesuslu" target="_blank" class="social"><span><img src="./img/social/twitter.png" alt="twitter" width="40px"><span> Twitter</span></span></a></li>
+                    <li><a href="https://github.com/isaenesuslu" target="_blank" class="social"><span><img src="./img/social/github.png" alt="github" width="45px" style="background-color: aliceblue; border-radius: 3px;"><span> Github</span></span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCIMxF8YOi3s7GaZ4h6mMdHQ" target="_blank" class="social"><span><img src="./img/social/youtube.png" alt="youtube" width="40px"><span> YouTube</span></span></a></li>
+                    <li><a href="#" class="social"><span><img src="./img/social/discord.png" alt="discord" width="50px"><span> Discord</span></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--* GAME -->
+        <div class="game-background">
+            <div class="settings" onmouseleave="settingsLeave()">
+                <img src="./img/buttons/Setting.png" onmouseenter="settingsFunc()" alt="">
+                <div class="s-buttons">
+                    <ul>
+                        <li><img src="./img/buttons/Information.png" onclick="infoFunc()" alt="info"></li>
+                        <li><img src="./img/buttons/SoundOff.png" class="audio-btn start-stop" alt="audio"></li>
+                        <li><img src="./img/buttons/Home.png" onclick="homeFunc()" alt="home"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game-panel">
+                <div class="sign">
+                    <div class="sign-buttons">
+                        <img src="./img/buttons/Play.png" onclick="gameStart()" class="play-button" alt="play">
+                        <img src="./img/buttons/Leaderboard.png" onclick="leaderBoard()" class="leaderboard" alt="leaderboard">
+                    </div>
+                </div>
+            </div>
+            <div class="game-finish text-white text-center">
+                    <div class="who-win"></div>
+                    <hr>
+                    <div class="finish-buttons">
+                        <img src="./img/buttons/Replay2.png" onclick="replay()" alt="replay">
+                        <img src="./img/buttons/Home2.png" onclick="homeFunc()" alt="home2">
+                    </div>
+            </div>
+            <div class="features text-center text-white">
+                <span class="exit" onclick="windowQuit3()" style="font-size:30px">x</span>
+                <p style="font-size: 26px;">being worked on</p>
+                <img src="./img/figure/dog-mascot.gif" alt="dog" width="150px">
+                <h1>Features in development:</h1>
+                <ul style="list-style: none; margin:0; padding:0; font-size:26px;">
+                    <li>- Store</li>
+                    <li>- Announcment</li>
+                    <li>- Leaderboard</li>
+                </ul>
+            </div>
+            <div class="alert-hero">
+                <div class="alert alert-warning alert-dismissible fade" role="alert"> 
+                    <p>If you encounter any problems, please let me know in the "contact" section.</p>
+                    <hr>
+                    <p>Thank you from now <i class="fa-solid fa-heart fa-lg" style="color: #fe5d5d;"></i></p>
+                    <button type="button" onclick="infoFunc()" class="btn-close"></button>
+                </div>
+            </div>
+                <button type="button" class="btn btn-outline-warning c-warning"><i class="fa-solid fa-triangle-exclamation fa-shake fa-lg"></i> Please choose character!</button>
+        <div onclick="c1Func()"><img src="img/figure/horse.gif" class="horse-1 horse" alt="horse1"></div>
+        <div onclick="c2Func()"><img src="img/figure/horse-2.gif" class="horse-2 horse" alt="horse2"></div>
+        <div><img src="img/figure/finish-line.png" class="finish-line" alt=""></div>
+        <div class="control-panel">
+            <div class="play-btn"></div>
+        </div>
+    </div>
+    <div class="mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <p>Please play the game on desktop or laptop</p>
+                    <p>mobile app coming soon...</p>
+                    <img src="./img/figure/coffee-man.gif" alt="coffee-man" width="300px" style="cursor: url(./img/figure/pixel.cur), auto;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
